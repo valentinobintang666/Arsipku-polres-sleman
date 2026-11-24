@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArsipKu — Pengelolaan Surat Instansi</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="loginView" class="login-wrap">
+      <div class="login-aside">
+        <div class="login-brand">
+          <div class="login-shield" aria-hidden="true">
+            <svg viewBox="0 0 48 56" fill="none">
+              <path d="M24 2 4 10v15c0 13 8 23 20 29 12-6 20-16 20-29V10L24 2Z" stroke="currentColor" stroke-width="2"/>
+              <path d="M15 15.5h12l6 6V39H15V15.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M27 15.5v6h6M19 26h10M19 30h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="m19 35 2.5 2.5L27 32" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div>
+            <p class="login-brand-title"><strong>ARSIPKU</strong></p>
+            <p class="login-brand-subtitle">Sistem Pengelolaan Surat</p>
+          </div>
+        </div>
+        <div class="login-hero-copy">
+          <span class="pill-light">WORKSPACE INSTANSI</span>
+          <h2>Persuratan<br><span>lebih teratur.</span></h2>
+          <p>Kelola surat masuk dan keluar secara terstruktur, dari pengajuan hingga persetujuan dan pengarsipan.</p>
+        </div>
+        <div class="login-feature-card">
+          <div class="login-feature-heading">
+            <span class="login-feature-icon">⌁</span>
+            <div>
+              <b>Alur persuratan terpadu</b>
+              <small>Semua proses tercatat dalam satu workspace</small>
+            </div>
+            <i class="login-live-dot"></i>
+          </div>
+          <div class="login-feature-steps">
+            <span><b>01</b> Catat surat</span>
+            <span><b>02</b> Persetujuan</span>
+            <span><b>03</b> Arsip digital</span>
+          </div>
+        </div>
+        <div class="login-footer">
+          <span>ARSIPKU <i>•</i> SISTEM PENGELOLAAN SURAT</span>
+          <span>© 2026</span>
+        </div>
+      </div>
+
+      <div class="login-card">
+        <div class="login-card-heading">
+          <span class="login-overline">PORTAL ADMINISTRASI</span>
+          <h1>Selamat datang <span aria-hidden="true">✦</span></h1>
+          <p>Masuk untuk melanjutkan pengelolaan surat instansi.</p>
+        </div>
+        <form id="loginForm">
+          <label for="loginRole">Peran / hak akses</label>
+          <div class="login-input-wrap">
+            <span class="login-input-icon" aria-hidden="true">◈</span>
+            <select id="loginRole" required>
+              <option value="pegawai">Pegawai Instansi</option>
+              <option value="atasan">Atasan / Pimpinan</option>
+            </select>
+          </div>
+          <label for="username">Nama pengguna</label>
+          <div class="login-input-wrap">
+            <span class="login-input-icon" aria-hidden="true">▣</span>
+            <input id="username" autocomplete="username" placeholder="Masukkan nama pengguna" required>
+          </div>
+          <label for="password">Kata sandi</label>
+          <div class="login-input-wrap">
+            <span class="login-input-icon" aria-hidden="true">▰</span>
+            <input id="password" type="password" autocomplete="current-password" placeholder="Masukkan kata sandi" required>
+            <button class="password-toggle" id="passwordToggle" type="button" aria-label="Tampilkan kata sandi" aria-pressed="false">
+              <svg class="password-eye-open" viewBox="0 0 24 24" fill="none" aria-hidden="true" hidden>
+                <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/>
+              </svg>
+              <svg class="password-eye-closed" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/>
+                <path d="m3 3 18 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+          <button class="btn primary full login-submit" type="submit">
+            <span>MASUK KE PORTAL</span>
+            <b aria-hidden="true">→</b>
+          </button>
+        </form>
+        <div class="demo-box">
+          <strong>Akun demo</strong>
+          <div>Admin: <code>admin</code> / <code>admin123</code></div>
+          <div>Pegawai: <code>pegawai</code> / <code>pegawai123</code></div>
+          <div>Atasan: <code>atasan</code> / <code>atasan123</code></div>
+        </div>
+        <p id="loginError" class="error" role="alert" aria-live="polite"></p>
+        <p class="login-security-note">
+          <span aria-hidden="true">◈</span>
+          Akses masuk sesuai peran akun yang terdaftar.
+        </p>
+      </div>
+    </div>
+
+    <div id="appView" class="app hidden">
+      <aside class="sidebar">
+        <div class="side-brand">
+          <div class="brand-mark small">A</div>
+          <div>
+            <b>ArsipKu</b>
+            <small>Document workspace</small>
+          </div>
+        </div>
+        <div class="side-label">MENU UTAMA</div>
+        <nav id="navigation">
+          <button class="nav-item active" data-page="dashboard"><span>▦</span> Dashboard</button>
+          <button class="nav-item" data-page="incoming"><span>↓</span> Surat Masuk</button>
+          <button class="nav-item" data-page="outgoing"><span>↑</span> Surat Keluar</button>
+          <button class="nav-item" data-page="archive"><span>▤</span> Dokumen</button>
+          <button class="nav-item" data-page="approval" id="approvalNav">
+            <span>✓</span> Persetujuan <i id="approvalBadge">0</i>
+          </button>
+          <button class="nav-item" data-page="users" id="usersNav"><span>♙</span> Manajemen Pengguna</button>
+          <button class="nav-item" data-page="activity" id="activityNav"><span>◷</span> Riwayat Aktivitas</button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="help-card">
+            <div class="help-icon">?</div>
+            <b>Butuh bantuan?</b>
+            <p>Hubungi administrator sistem instansi.</p>
+          </div>
+          <button id="logoutBtn" class="logout"><span>↪</span> Keluar</button>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <div class="breadcrumb">Workspace <span>/</span> <b id="breadcrumb">Dashboard</b></div>
+            <div class="mobile-brand">ArsipKu</div>
+          </div>
+          <div class="top-user">
+            <div class="date-label">
+              <span class="clock-icon" aria-hidden="true">◷</span>
+              <div class="clock-meta">
+                <span id="todayLabel"></span>
+                <strong id="clockLabel">00:00:00</strong>
+              </div>
+              <span class="clock-live" aria-label="Jam berjalan"></span>
+            </div>
+            <div class="avatar" id="userAvatar">A</div>
+            <div class="user-meta">
+              <b id="userName">Admin</b>
+              <small id="userRole">Administrator</small>
+            </div>
+            <button class="profile-edit-btn" onclick="openProfileForm()" title="Edit profil">Edit profil</button>
+          </div>
+        </header>
+        <section class="content">
+          <div id="pageContent"></div>
+        </section>
+      </main>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <div id="modalRoot"></div>
+    <script src="app.js?v=20261124-php-mysql"></script>
+  </body>
+</html>
